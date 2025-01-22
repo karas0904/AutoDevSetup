@@ -65,15 +65,20 @@ project_name/
   <li><strong>POST /create-project/</strong>: Processes form submission to create the project.</li>
 </ul>
 
-<h2>Troubleshooting</h2>
+<h2>Screenshots</h2>
+<h3>Initialpage</h3>
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/2153c000-010a-4da2-97da-5bf591dbd3e8" />
+<h3>While creaing</h3>
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/2945b838-cbd4-4a91-9e52-82eb1e8ba25d" />
+<h3>When successfully created</h3>
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/b5af1bce-e33b-42ef-bfec-c0cbbc082b5c" />
 
+<h2>Troubleshooting</h2>
 <h3>GitHub Repository Creation Fails:</h3>
 <p>Ensure your GitHub token is correct and has the necessary permissions.</p>
 
 <h2>Behind the Scenes: Data Flow and Architecture</h2>
-
 <h3>High-Level Architecture</h3>
-
 <h4>Frontend:</h4>
 <p>The frontend consists of an HTML form styled with CSS and powered by JavaScript. When the user submits the form, JavaScript sends a POST request to the backend using <code>fetch</code>.</p>
 
