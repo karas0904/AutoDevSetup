@@ -11,89 +11,109 @@ This project is a streamlined tool for creating project directories, setting up 
 - **User Info Display**: After creating the repo, all the info needed by the user is displayed on the web.
 
 
-Installation
-Clone this repository:
-git clone https://github.com/your_github_username/your_project_name.git
+<h2>Installation</h2>
 
-Navigate to the project directory:
-cd your_project_name
+<ol>
+  <li>Clone this repository:
+    <pre><code>git clone https://github.com/your_github_username/your_project_name.git</code></pre>
+  </li>
+  <li>Navigate to the project directory:
+    <pre><code>cd your_project_name</code></pre>
+  </li>
+  <li>Create a virtual environment:
+    <pre><code>python -m venv venv</code></pre>
+  </li>
+  <li>Activate the virtual environment:
+    <ul>
+      <li>On macOS/Linux:
+        <pre><code>source venv/bin/activate</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>Install dependencies:
+    <pre><code>pip install -r requirements.txt</code></pre>
+  </li>
+  <li>Run the application:
+    <pre><code>uvicorn main:app --reload</code></pre>
+  </li>
+  <li>Open your browser and navigate to:
+    <p>URL shown in the terminal.</p>
+  </li>
+</ol>
 
-Create a virtual environment:
-python -m venv venv
 
-Activate the virtual environment:
-On macOS/Linux:
-source venv/bin/activate
+<h2>File Structure</h2>
 
-Install dependencies:
-pip install -r requirements.txt
-
-Run the application:
-uvicorn main:app --reload
-
-Open your browser and navigate to:
-localhost URL showing in the terminal
-
-File Structure
+<pre>
 project_name/
 ├── backend/
-│   ├── main.py             # FastAPI application logic
-│   ├── templates/          # HTML templates (e.g., index.html)
-        ├──index.html
-│   ├── static/             # Static assets (CSS, JS)
-        ├──styles.css
-        ├──script.js
-├── venv/                   # Virtual environment folder
-├── requirements.txt        # Python dependencies
-├── README.md               # Documentation
+│   ├── main.py             <!-- FastAPI application logic -->
+│   ├── templates/          <!-- HTML templates (e.g., index.html) -->
+│       ├── index.html
+│   ├── static/             <!-- Static assets (CSS, JS) -->
+│       ├── styles.css
+│       ├── script.js
+├── venv/                   <!-- Virtual environment folder -->
+├── requirements.txt        <!-- Python dependencies -->
+├── README.md               <!-- Documentation -->
+</pre>
 
+<h2>API Endpoints</h2>
 
-API Endpoints
-GET /: Serves the homepage (form for project creation).
-POST /create-project/: Processes form submission to create the project.
+<ul>
+  <li><strong>GET /</strong>: Serves the homepage (form for project creation).</li>
+  <li><strong>POST /create-project/</strong>: Processes form submission to create the project.</li>
+</ul>
 
+<h2>Troubleshooting</h2>
 
-Troubleshooting
-GitHub Repository Creation Fails:
-Ensure your GitHub token is correct and has the necessary permissions.
+<h3>GitHub Repository Creation Fails:</h3>
+<p>Ensure your GitHub token is correct and has the necessary permissions.</p>
 
+<h2>Behind the Scenes: Data Flow and Architecture</h2>
 
+<h3>High-Level Architecture</h3>
 
-Behind the Scenes: Data Flow and Architecture
-High-Level Architecture
+<h4>Frontend:</h4>
+<p>The frontend consists of an HTML form styled with CSS and powered by JavaScript. When the user submits the form, JavaScript sends a POST request to the backend using <code>fetch</code>.</p>
 
-Frontend:
-The frontend consists of an HTML form styled with CSS and powered by JavaScript.
-When the user submits the form, JavaScript sends a POST request to the backend using fetch.
+<h4>Backend:</h4>
+<p>The backend is built with FastAPI, which processes the POST request. It handles the following tasks:</p>
+<ul>
+  <li>Validating user inputs.</li>
+  <li>Creating a local project directory.</li>
+  <li>Setting up a virtual environment using Python's <code>venv</code> module.</li>
+  <li>Initializing a GitHub repository using the provided token via GitHub's REST API.</li>
+</ul>
 
-Backend:
-The backend is built with FastAPI, which processes the POST request.
-It handles the following tasks:
-Validating user inputs.
-Creating a local project directory.
-Setting up a virtual environment using Python's venv module.
-Initializing a GitHub repository using the provided token via GitHub's REST API.
+<h4>Frontend Flow:</h4>
+<ul>
+  <li>User enters details in the form (project name, GitHub token, virtual environment name) and clicks "Create Project."</li>
+  <li>JavaScript sends this data as a JSON object to the <code>/create-project/</code> endpoint.</li>
+</ul>
 
-Frontend:
-User enters details in the form (project name, GitHub token, virtual environment name) and clicks "Create Project."
-JavaScript sends this data as a JSON object to the /create-project/ endpoint.
+<h4>Backend Flow:</h4>
+<ul>
+  <li>Receives the POST request containing project details.</li>
+  <li>Executes the following steps:
+    <ul>
+      <li><strong>Step 1:</strong> Validates the input data.</li>
+      <li><strong>Step 2:</strong> Creates a directory with the project name at the specified path.</li>
+      <li><strong>Step 3:</strong> Sets up a Python virtual environment in the directory.</li>
+      <li><strong>Step 4:</strong> Creates a GitHub repository using the provided token and links it to the local directory.</li>
+    </ul>
+  </li>
+</ul>
 
-Backend:
-Receives the POST request containing project details.
-Executes the following steps:
-Step 1: Validates the input data.
-Step 2: Creates a directory with the project name at the specified path.
-Step 3: Sets up a Python virtual environment in the directory.
-Step 4: Creates a GitHub repository using the provided token and links it to the local directory.
+<h4>Response:</h4>
+<p>Upon successful execution, the backend sends a JSON response with:</p>
+<ul>
+  <li>Project name</li>
+  <li>GitHub repository URL</li>
+  <li>Local path</li>
+  <li>Virtual environment name</li>
+</ul>
+<p>If an error occurs, an error message is returned.</p>
 
-Response:
-Upon successful execution, the backend sends a JSON response with:
-Project name
-GitHub repository URL
-Local path
-Virtual environment name
-If an error occurs, an error message is returned.
-
-Frontend:
-Updates the UI with the received response or displays an error message.
-
+<h4>Frontend Response Handling:</h4>
+<p>Updates the UI with the received response or displays an error message.</p>
