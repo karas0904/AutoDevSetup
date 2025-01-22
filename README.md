@@ -67,9 +67,9 @@ project_name/
 
 <h2>Screenshots</h2>
 <h3>Initialpage</h3>
-<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/2153c000-010a-4da2-97da-5bf591dbd3e8" />
-<h3>While creaing</h3>
 <img width="1512" alt="Image" src="https://github.com/user-attachments/assets/2945b838-cbd4-4a91-9e52-82eb1e8ba25d" />
+<h3>While creaing</h3>
+<img width="1512" alt="Image" src="https://github.com/user-attachments/assets/2153c000-010a-4da2-97da-5bf591dbd3e8" />
 <h3>When successfully created</h3>
 <img width="1512" alt="Image" src="https://github.com/user-attachments/assets/b5af1bce-e33b-42ef-bfec-c0cbbc082b5c" />
 
