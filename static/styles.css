@@ -1,42 +1,174 @@
+/* General Reset */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f7f6;
   margin: 0;
-  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-}
-.container {
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 30px;
-  width: 400px;
-  text-align: center;
-}
-h1 {
-  color: #333;
-}
-form {
-  margin-top: 20px;
-}
-input[type="text"] {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-button {
+  background-color: #f8f9fa;
+  color: rgb(238, 194, 148);
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-bottom: 3px solid #060606;
 }
-button:hover {
-  background-color: #0056b3;
+
+.project-name {
+  font-size: 1.5em;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 25px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 10px; /* Add padding inside the input box */
+  margin: 10px 0; /* Add margin to separate it from the edges */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/*dark mode*/
+/* Dark Theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .navbar {
+  background-color: #1e1e1e;
+}
+
+body.dark-theme .form-box,
+body.dark-theme .instructions-box {
+  background-color: #1e1e1e;
+  border-color: #333;
+  color: #ffffff;
+}
+
+body.dark-theme input,
+body.dark-theme button {
+  background-color: #333;
+  color: #ffffff;
+  border-color: #444;
+}
+
+body.dark-theme button {
+  background-color: #4caf50;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #ddf2ff7c;
+  margin-top: 20px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 rgb(0, 0, 0);
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 20px;
+}
+
+.form-box,
+.instructions-box {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 rgb(0, 0, 0);
+  background-color: #faf3e0;
+}
+
+.form-box h2,
+.instructions-box h2 {
+  color: #000000;
+}
+
+.video-iframe {
+  width: 100%; /* Makes iframe width 100% of its parent container */
+  height: 300px; /* Set the height to 500px (adjust as needed) */
+  border-radius: 10px; /* Optional: Adds rounded corners */ /* Adds a shadow to the iframe */
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+}
+
+button {
+  background-color: #fd9000;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 rgb(0, 0, 0);
+}
+
+/* Results Section */
+.results-box {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border-radius: 5px;
+  border: 3px solid #000000;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0 rgb(0, 0, 0);
+  background-color: #faf3e0;
 }
