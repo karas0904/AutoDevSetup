@@ -9,7 +9,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 
 app = FastAPI()
-templates = Jinja2Templates(directory="backend/templates")
+templates = Jinja2Templates(directory="backend/static")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
