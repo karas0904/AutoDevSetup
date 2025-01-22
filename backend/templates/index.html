@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Agent Project</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the AI Agent Project</h1>
+      <p>Please enter your project name:</p>
+      <form action="/create-project" method="post">
+        <input
+          type="text"
+          id="project_name"
+          name="project_name"
+          placeholder="Enter project name"
+          required
+        />
+        <br />
+        <button type="submit">Create Project</button>
+      </form>
+    </div>
+  </body>
+</html>
