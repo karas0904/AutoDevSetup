@@ -1,13 +1,15 @@
-Project Name: AutoDevSetup
-Description
-This project is a streamlined tool for creating project directories, setting up virtual environments, and initializing GitHub repositories automatically. It simplifies the development process, saving time of going to YT again and again.
+# Project Name: AutoDevSetup
 
-Features
-User-Friendly Interface: A simple form to input project details.
-GitHub Integration: Automatically creates a repository on GitHub.
-Local Setup: Creates a project directory on your local machine.
-Virtual Environment Setup: Configures a Python virtual environment with essential dependencies.
-User Info need :After creating the repo all the info needed by user is displayed on the web.
+## Description
+This project is a streamlined tool for creating project directories, setting up virtual environments, and initializing GitHub repositories automatically. It simplifies the development process, saving time of going to YouTube again and again.
+
+## Features
+- **User-Friendly Interface**: A simple form to input project details.
+- **GitHub Integration**: Automatically creates a repository on GitHub.
+- **Local Setup**: Creates a project directory on your local machine.
+- **Virtual Environment Setup**: Configures a Python virtual environment with essential dependencies.
+- **User Info Display**: After creating the repo, all the info needed by the user is displayed on the web.
+
 
 Installation
 Clone this repository:
